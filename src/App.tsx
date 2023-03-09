@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { PageLayout } from "./Components/PageLayout";
+import { useMSGraph } from "./graph";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import HomePage from "./HomePage";
 function App() {
+  // const { getFiles, uploadFile } = useMSGraph();
+  // const [files, setFiles]: any = useState([]);
+  // const getFIlesFromDrive = () => {
+  //   getFiles().then((response) => setFiles(response.value));
+  //   // setFiles(getFiles());
+  //   // console.log(files, " filessss");
+  // };
+  // const onFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   console.log(e, "event file");
+  //   if (e.target.files) {
+  //     const file = e.target.files[0];
+  //     uploadFile(file);
+  //   }
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PageLayout>
+        {/* <button onClick={getFIlesFromDrive}>Get Files</button>
+        <input type="file" onChange={onFileUpload}></input> */}
+      </PageLayout>
     </div>
   );
 }
